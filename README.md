@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-# https://github.com/Alpha-santhosh/React-Context-001/settings/pages
+# https://alpha-santhosh.github.io/React-Context-001/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
