@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useState } from "react";
+import "./index.js";
+import Content from "./Components/Content.jsx";
+import Nav from "./Components/Nav.jsx";
+import { Themes } from "./Themes.js";
+
+export const globleData = createContext();
 
 function App() {
+  const [ThemeStatus, setThemeStatus] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <globleData.Provider value={{ ThemeStatus, setThemeStatus }}>
+      <p>I have changed theme to {ThemeStatus ? "Light" : "Dark"}</p>
+      <div style={ThemeStatus ? Themes.LightTheme : Themes.DarkTheme}>
+        <Nav />
+        <Content />
+      </div>
+    </globleData.Provider>
   );
 }
 
